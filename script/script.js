@@ -71,6 +71,37 @@ gettingElementBYId("all-hotlines").addEventListener("click", function (e) {
         copyCountNumber = copyCountNumber + 1;
         gettingElementBYId("copy-count").innerText = copyCountNumber;
 
+        //copying number to clipboard
+
+        //creating a temporary input tag
+        const inputTag = document.createElement('input');
+
+        //append it to document
+        document.body.appendChild(inputTag);
+        
+        //setting input tag value
+        inputTag.value = hotlineNumber2;
+        
+        //selecting value
+        inputTag.select();
+        document.execCommand('copy');
+        document.body.removeChild(inputTag);
+
+
+
+        /**
+         * const colorCode = document.getElementById("color-name");
+            const inputTag = document.createElement('input');
+            document.body.appendChild(inputTag);
+            inputTag.value = colorCode.innerText;
+
+            alert("color code will be copied");
+
+            inputTag.select();
+            document.execCommand('copy');
+            document.body.removeChild(inputTag);
+         */
+
 
     }
 })
