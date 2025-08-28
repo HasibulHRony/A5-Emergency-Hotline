@@ -57,10 +57,26 @@ gettingElementBYId("all-hotlines").addEventListener("click", function (e) {
         historyContainer.appendChild(div);
 
     }
+
+
+
+    // copy button functionality
+    if (e.target.className.includes("copy-btn") === true) {
+
+        //copy count increase
+        const hotlineNumber2 = e.target.parentNode.parentNode.children[2].children[0].innerText;
+        const copyCount = gettingElementBYId("copy-count").innerText;
+        let copyCountNumber = Number(copyCount);
+        alert(`Are you want to copy the hotline number ${hotlineNumber2}?`)
+        copyCountNumber = copyCountNumber + 1;
+        gettingElementBYId("copy-count").innerText = copyCountNumber;
+
+
+    }
 })
 
 // clear btn functionality
-gettingElementBYId("clear-btn").addEventListener("click", function(){
+gettingElementBYId("clear-btn").addEventListener("click", function () {
     const clearHistory = gettingElementBYId("history-container");
     clearHistory.innerHTML = "";
 })
